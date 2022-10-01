@@ -4,7 +4,7 @@ import styles from './Button.module.css'; // This syntax is for CSS modules
 
 // import styled from 'styled-components';
 // This syuntax is called as tagged template literal. This is a default JavaScript feature. 
-// "button" is simply a method of the "styled" object. to execute the button method, we use `` instead of ();. This button methods return button.
+// "button" is simply a method of the "styled" object. This styled has methods for all HTML elements. To execute the button method, we use `` instead of ();. This button methods return new button component.
 // We do not have the place where we set up the classes, so the styling will pass between the opening and closing back tick and will directly effect this button. That is why we delete selector in this back tick.
 // The button which is returned all to by default applies all the props we might be passing to out own button component
 // const Button = styled.button`

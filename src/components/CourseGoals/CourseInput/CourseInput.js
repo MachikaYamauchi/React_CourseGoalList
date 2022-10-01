@@ -33,10 +33,12 @@ import styles from "./CourseInput.module.css";
 
 const CourseInput = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
-  // to set the indicator for whatever the user entered something valid or not.
+
+  // to set the indicator to check if user entered something valid or not -> boolean
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = (event) => {
+    // This "If sentence" checks if the user input valid input.
     if (event.target.value.trim().length > 0) {
       setIsValid(true);
     }
@@ -46,8 +48,8 @@ const CourseInput = (props) => {
   const formSubmitHandler = (event) => {
     event.preventDefault();
 
-    // The trim() method removes whitespace from both sides of a string.
-    // If sentence means if the input is essentially empty, return; -> the line of code "props.onAddGoal(enteredValue);" will not be executed
+    // The trim() method removes whitespace from both sides of a string.-> enteredValue.trim().length === 0 means there is no input.
+    // <If sentence> means if the input is essentially empty, return; -> the line of code "props.onAddGoal(enteredValue);" will not be executed because the function stops the next process once executing "return".
     if (enteredValue.trim().length === 0) {
       setIsValid(false);
       return;
